@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Магазин товаров для животных «Лапка»</title>
+    <title>Магазин спортивных товаров «SportStyle»</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
         <nav>
             <ul class="container nav">
                 <li>
-                    <a href="#" class="logo">Лапка:store</a>
+                    <a href="#" class="logo">SportStyle</a>
                 </li>
                 <li>
                     <a href="#shop-items">Каталог</a>
@@ -28,7 +28,7 @@
                 <li>
                     <div class="site-search">
                         <input type="search" id="search-input">
-                        <button type="button" id="search-btn" class="fa fa-search"></i>
+                        <button type="button" id="search-btn" class="fa fa-search">
           </div>
         </li>
       </ul>
@@ -51,7 +51,14 @@
     <p id="nothing-found">Ничего не найдено</p>
   </main>
   <footer id="contacts" class="container">
-    <a href="#" class="logo">Лапка:store</a>
+    <a href="#" class="logo">SportStyle</a>
+
+    <div class="block">
+      <div class="box paragraph">Наша одежда самая удобная для Ваших тренировок!</div>
+      <div class="box paragraph">При первом  заказе скидка -20% на любой товар!</div>
+      <div class="box paragraph">Наши консультанты всегда помогут Вам!</div>
+      <div class="box paragraph">Ежедневная тренировка — залог Вашего здоровья!</div>
+    </div>
   </footer>
   <template id="item-template">
     <div class="shop-item">
@@ -64,10 +71,14 @@
       <div class="footer">
         <span class="price"></span>
         <div class="rating"></div>
-      </div>
-    </div>
-    </div>
-  </template>
-  <script src="script.js"></script>
+        <button class="card__add">В корзину</button></div>
+                    </template>
+                    <button class="cart" id="cart">
+    <img class="cart__image" src="./img/cart-shopping-solid.svg" al="cart">
+    <div class="cart__num">0</div>
+  </button>
+
+                    <script src="script.js"></script>
 </body>
+
 </html>

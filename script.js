@@ -11,7 +11,7 @@ const items = [{
         description: "Кроссовки FILA Escape станут отличным завершением спортивного образа и внесут максимум комфорта в твой день.",
         tags: ["female"],
         price: 217,
-        img: "./img/2.jpeg",
+        img: "./img/2.jpg",
         rating: 5.0,
     },
     {
@@ -144,12 +144,13 @@ function prepareShopItem(shopItem) {
     item.querySelector('img').src = img;
     item.querySelector('.price').textContent = `${price}P`;
 
+
     const ratingContainer = item.querySelector('.rating');
 
     for (let i = 0; i < rating; i++) {
-        const star = document.createElement('i');
-        star.classList.add('fa', 'fa-star');
-        ratingContainer.append(star);
+        const heart = document.createElement('i');
+        heart.classList.add("fa", "fa-heart");
+        ratingContainer.append(heart);
     }
 
     const tagsHolder = item.querySelector('.tags');
@@ -163,6 +164,8 @@ function prepareShopItem(shopItem) {
 
     return item;
 }
+
+
 
 let currentState = [...items];
 
@@ -250,3 +253,46 @@ function applySearch() {
 
 searchButton.addEventListener("click", applySearch);
 searchInput.addEventListener("search", applySearch);
+
+const cube = Array.from(document.querySelectorAll('.paragraph'));
+
+function paragraph(item, index) {
+
+    const bgColor = getComputedStyle(item).backgroundColor,
+
+        paragraphLayer = document.createElement('div');
+    paragraphLayer.classList.add('paragraph-layer');
+
+    item.style.backgroundColor = 'transparent';
+    item.style.position = 'relative';
+    item.style.overflow = 'hidden';
+    setTimeout(function() {
+        paragraphLayer.style.backgroundColor = bgColor;
+        item.appendChild(paragraphLayer);
+    }, index * 1000);
+}
+
+cube.forEach(paragraph);
+
+const cardAddArr = Array.from(document.querySelectorAll(".card__add")); // Получаем все кнопки добавления товаров
+const cartNum = document.querySelector("#cart_num"); // Счётчик товаров в корзине
+const cart = document.querySelector("#cart"); // Элемент корзины
+
+class Cart {
+    products = []; // Список товаров в корзине
+
+    get count() {
+        return this.products.length; // Количество товаров в корзине
+    }
+
+    addProduct(product) {
+        this.products.push(product); // Добавить товар в корзину
+    }
+
+    removeProduct(index) {
+        this.products.splice(index, 1); // Удалить товар из корзины по индексу
+    }
+}
+
+myCart.products = JSON.parse(localStorage.getItem("cart")).products || [];
+cartNum.textContent = myCart.count;
