@@ -274,25 +274,17 @@ function paragraph(item, index) {
 
 cube.forEach(paragraph);
 
-const cardAddArr = Array.from(document.querySelectorAll(".card__add")); // Получаем все кнопки добавления товаров
-const cartNum = document.querySelector("#cart_num"); // Счётчик товаров в корзине
-const cart = document.querySelector("#cart"); // Элемент корзины
+const cartItems = [];
+const itemCountElement = document.getElementById('cart__count');
 
-class Cart {
-    products = []; // Список товаров в корзине
-
-    get count() {
-        return this.products.length; // Количество товаров в корзине
-    }
-
-    addProduct(product) {
-        this.products.push(product); // Добавить товар в корзину
-    }
-
-    removeProduct(index) {
-        this.products.splice(index, 1); // Удалить товар из корзины по индексу
-    }
+function updateCartCount() {
+    itemCountElement.textContent = cartItems.length;
 }
 
-myCart.products = JSON.parse(localStorage.getItem("cart")).products || [];
-cartNum.textContent = myCart.count;
+const addToCartButtons = document.querySelectorAll('.add__to__cart');
+addToCartButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        cartItems.push('Товар');
+        updateCartCount();
+    });
+});

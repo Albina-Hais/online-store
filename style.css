@@ -245,10 +245,10 @@ footer {
 }
 
 .cart__image {
-    width: 25px;
+    width: 30px;
 }
 
-.cart__num {
+.cart__count {
     position: absolute;
     top: -5px;
     right: -5px;
@@ -260,13 +260,13 @@ footer {
     justify-content: center;
     align-items: center;
     color: var(--white);
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 500;
 }
 
-.card__add {
+.add__to__cart {
     display: block;
-    width: 30%;
+    width: 40%;
     padding: 5px;
     font-size: 15px;
     color: var(--green);
@@ -278,7 +278,7 @@ footer {
     margin-top: auto;
 }
 
-.card__add:hover {
+.add__to__cart:hover {
     border-color: var(--red);
     background-color: var(--red);
     color: #fff;
