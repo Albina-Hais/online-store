@@ -271,19 +271,3 @@ function paragraph(item, index) {
         item.appendChild(paragraphLayer);
     }, index * 1000);
 }
-
-cube.forEach(paragraph);
-
-const cartItems = [];
-
-const cardAddArr = Array.from(document.querySelectorAll(".card__add")); // Получаем все кнопки добавления товаров
-const cartNum = document.querySelector("#cart_num"); // Счётчик товаров в корзине 
-
-cardAddArr.addEventListener('click', () => {
-    // Добавляем элемент в массив
-    const newItem = { id: new Date().getTime(), name: 'Новый элемент' }; // замените на реальный элемент
-    cartItems.push(newItem);
-
-    // Обновляем счетчик
-    cartNum.textContent = cartItems.length;
-});
