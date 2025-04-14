@@ -185,13 +185,13 @@ footer {
 
 .block {
     display: flex;
-    margin: 20px auto;
+    margin: 30px auto;
     .box {
         &:nth-child(1) {
             background-color: var( --red);
         }
         &:nth-child(2) {
-            background-color: var(--green);
+            background-color: var( --green);
         }
         &:nth-child(3) {
             background-color: var( --yellow);
@@ -199,6 +199,10 @@ footer {
         &:nth-child(4) {
             background-color: var( --peach);
         }
+    }
+    .paragraph {
+        padding: 12px;
+        font-style: italic;
     }
 }
 
@@ -248,7 +252,7 @@ footer {
     width: 30px;
 }
 
-.cart__count {
+.cart__num {
     position: absolute;
     top: -5px;
     right: -5px;
@@ -264,7 +268,7 @@ footer {
     font-weight: 500;
 }
 
-.add__to__cart {
+.card__add {
     display: block;
     width: 40%;
     padding: 5px;
@@ -278,7 +282,7 @@ footer {
     margin-top: auto;
 }
 
-.add__to__cart:hover {
+.card__add:hover {
     border-color: var(--red);
     background-color: var(--red);
     color: #fff;
