@@ -253,21 +253,3 @@ function applySearch() {
 
 searchButton.addEventListener("click", applySearch);
 searchInput.addEventListener("search", applySearch);
-
-const cube = Array.from(document.querySelectorAll('.paragraph'));
-
-function paragraph(item, index) {
-
-    const bgColor = getComputedStyle(item).backgroundColor,
-
-        paragraphLayer = document.createElement('div');
-    paragraphLayer.classList.add('paragraph-layer');
-
-    item.style.backgroundColor = 'transparent';
-    item.style.position = 'relative';
-    item.style.overflow = 'hidden';
-    setTimeout(function() {
-        paragraphLayer.style.backgroundColor = bgColor;
-        item.appendChild(paragraphLayer);
-    }, index * 1000);
-}
